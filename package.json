@@ -1,0 +1,22 @@
+{
+  "name": "reniec-idaas",
+  "version": "1.0.0",
+  "description": "SDK for connect with RENIEC IDaaS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "reniec",
+    "idaas",
+    "peru"
+  ],
+  "author": "Miguel Pazo (http://miguelpazo.com)",
+  "license": "ISC",
+  "dependencies": {
+    "http-build-query": "^0.7.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "underscore": "^1.9.1"
+  }
+}
