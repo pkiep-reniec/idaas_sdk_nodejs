@@ -6,5 +6,8 @@ Instalation:
 $ npm install reniec-idaas -S
 ```
 
-Integration examples and more SDKs:
+Integration example:
+https://github.com/pkiep-reniec/integration_java_example
+
+More project details:
 https://idp-pre.reniec.gob.pe/site/
