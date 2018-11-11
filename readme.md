@@ -1,8 +1,8 @@
 # RENIEC IDaaS SDK for NodeJS
 With this client you can connect with our Identity as a Service (IDaaS).
 
-Instalation:
-```sh
+Installation:
+```
 $ npm install reniec-idaas -S
 ```
 
