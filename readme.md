@@ -7,7 +7,7 @@ $ npm install reniec-idaas -S
 ```
 
 Integration example:
-https://github.com/pkiep-reniec/integration_java_example
+https://github.com/pkiep-reniec/integration_nodejs_example
 
 More project details:
 https://idaas.reniec.gob.pe/site/
