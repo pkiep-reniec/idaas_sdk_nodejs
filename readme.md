@@ -10,4 +10,4 @@ Integration example:
 https://github.com/pkiep-reniec/integration_java_example
 
 More project details:
-https://idp-pre.reniec.gob.pe/site/
+https://idaas.reniec.gob.pe/site/
