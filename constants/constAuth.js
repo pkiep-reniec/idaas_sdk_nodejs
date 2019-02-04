@@ -9,6 +9,8 @@ module.exports = Object.freeze({
     ACR_PKI_TOKEN: 'pki_token',
     ACR_ONLY_PASSWORD: 'only_password',
     ACR_ONLY_QUESTIONS: 'only_questions',
+    PKI_DNIE_MOBILE: 'pki_dnie_mobile',
+    FINGERPRINT_MOBILE: 'fingerprint_mobile',
     PROMPT_NONE: 'none',
     PROMPT_LOGIN: 'login',
     PROMPT_CONSENT: 'consent',
