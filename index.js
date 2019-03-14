@@ -9,7 +9,7 @@ let request = require('request-promise');
 
 //config module
 let redirectUri = null;
-let responseType = null;
+let responseTypes = [];
 let scopes = null;
 let acr = null;
 let prompts = null;
@@ -20,7 +20,7 @@ let loginHint = null;
 
 function setConfig(data) {
     redirectUri = data.redirectUri;
-    responseType = data.responseType || 'code';
+    responseTypes = _.isArray(data.responseTypes) ? data.responseTypes : ['code'];
     scopes = _.isArray(data.scopes) ? data.scopes.concat(['openid']) : ['openid'];
     acr = data.acr || null;
     prompts = _.isArray(data.prompts) ? data.prompts : [];
@@ -33,7 +33,7 @@ function setConfig(data) {
 function getLoginUrl() {
     try {
         let params = {
-            response_type: responseType,
+            response_type: responseTypes.join(' '),
             client_id: config.client_id,
             redirect_uri: redirectUri,
             state: state,
