@@ -9,32 +9,52 @@ let request = require('request-promise');
 
 //config module
 let redirectUri = null;
+let responseType = null;
 let scopes = null;
 let acr = null;
-let prompt = null;
+let prompts = null;
 let state = null;
 let config = null;
+let maxAge = null;
+let loginHint = null;
 
 function setConfig(data) {
     redirectUri = data.redirectUri;
+    responseType = data.responseType || 'code';
     scopes = _.isArray(data.scopes) ? data.scopes.concat(['openid']) : ['openid'];
-    acr = data.acr || constAuth.ACR_ONE_FACTOR;
-    prompt = data.prompt || '';
+    acr = data.acr || null;
+    prompts = _.isArray(data.prompts) ? data.prompts : [];
     state = data.state;
+    maxAge = !isNaN(data.maxAge) ? data.maxAge : null;
+    loginHint = data.loginHint || null;
     config = data.config;
 }
 
 function getLoginUrl() {
     try {
         let params = {
-            response_type: 'code',
+            response_type: responseType,
             client_id: config.client_id,
             redirect_uri: redirectUri,
             state: state,
-            scope: scopes.join(' '),
-            prompt: prompt,
-            acr_values: acr
+            scope: scopes.join(' ')
         };
+
+        if (prompts.length > 0) {
+            params = _.extend(params, {prompt: prompts.join(' ')})
+        }
+
+        if (acr !== null) {
+            params = _.extend(params, {acr_values: acr})
+        }
+
+        if (maxAge !== null) {
+            params = _.extend(params, {max_age: maxAge})
+        }
+
+        if (loginHint !== null) {
+            params = _.extend(params, {login_hint: loginHint})
+        }
 
         let url = config.auth_uri + '?' + httpBuildQuery(params);
 

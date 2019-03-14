@@ -18,4 +18,7 @@ module.exports = Object.freeze({
     SCOPE_EMAIL: 'email',
     SCOPE_PHONE: 'phone',
     SCOPE_OFFLINE_ACCESS: 'offline_access',
+    RESPONSE_TYPE_CODE: 'code',
+    RESPONSE_TYPE_ID_TOKEN: 'id_token',
+    RESPONSE_TYPE_TOKEN: 'token'
 });
