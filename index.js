@@ -20,7 +20,7 @@ let loginHint = null;
 
 function setConfig(data) {
     redirectUri = data.redirectUri;
-    responseTypes = _.isArray(data.responseTypes) ? data.responseTypes : ['code'];
+    responseTypes = _.isArray(data.responseTypes) ? data.responseTypes : [constAuth.RESPONSE_TYPE_CODE];
     scopes = _.isArray(data.scopes) ? data.scopes.concat(['openid']) : ['openid'];
     acr = data.acr || null;
     prompts = _.isArray(data.prompts) ? data.prompts : [];
