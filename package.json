@@ -9,9 +9,10 @@
   "keywords": [
     "reniec",
     "idaas",
-    "peru"
+    "idperu"
   ],
   "author": "Miguel Pazo (http://miguelpazo.com)",
+  "homepage": "https://idperu.reniec.gob.pe/site/",
   "license": "ISC",
   "dependencies": {
     "http-build-query": "^0.7.0",
